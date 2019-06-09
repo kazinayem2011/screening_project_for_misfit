@@ -1,0 +1,17 @@
+<li class="nav-item {{ emp_request }}">
+    <a href="javascript:;" class="nav-link nav-toggle">
+        <i class="fa fa-user"></i>
+        <span class="title">Request</span>
+        <span class="selected"></span>
+        <span class="arrow open"></span>
+    </a>
+    <ul class="sub-menu">
+
+         <li class="nav-item {{ emp_request_list }}">
+            <a href="{% url 'employeeRequest:list_request' %}" class="nav-link ">
+                <span class="title">Request List</span>
+
+            </a>
+        </li>
+    </ul>
+</li>

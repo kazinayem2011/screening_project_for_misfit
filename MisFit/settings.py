@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'users',
     'auditlog',
     'imagekit',
+    'employeeRequest',
     'social_django',
 ]
 

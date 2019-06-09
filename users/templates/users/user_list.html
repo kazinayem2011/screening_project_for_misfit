@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load imagekit %}
+
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption font-dark">
+                        <i class="icon-list font-dark"></i>
+                        <span class="caption-subject bold uppercase">{{title}}</span>
+                    </div>
+
+                </div>
+                 {% include 'includes/message_template.html' %}
+                <div class="portlet-body">
+
+                        <table id="sample_1" class="table table-striped table-bordered table-hover table-checkable order-column">
+                            <thead>
+                            <tr>
+                                <th> Name </th>
+                                <th> Email </th>
+                                <th>Photo</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for user in p_users %}
+                                <tr class="odd gradeX">
+
+                                    <td>{{ user.first_name }} {{ user.last_name }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td>
+                                        <img src="{% static user.thumb.url %}" alt="" class="image-thumb" width="70px">
+                                    </td>
+                                    <td>
+                                         {% if user.is_active %}
+                                            <span class="label label-sm label-success"> Active </span>
+                                         {% else %}
+
+                                            <span class="label label-sm label-danger"> Inactive </span>
+                                         {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+
+                        </table>
+                </div>
+            </div>
+            <!-- END EXAMPLE TABLE PORTLET-->
+        </div>
+    </div>
+
+{% endblock %}

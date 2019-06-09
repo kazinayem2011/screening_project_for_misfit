@@ -1,0 +1,53 @@
+{% csrf_token %}
+{% if form.non_field_errors %}
+    {{ form.non_field_errors }}
+{% endif %}
+
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+
+<div class="form-group">
+    <div class="input-icon">
+        <i class="fa fa-user"></i>
+         {{ form.first_name }}
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="input-icon">
+        <i class="fa fa-user"></i>
+         {{ form.last_name }}
+    </div>
+</div>
+<div class="form-group">
+    <div class="input-icon">
+        <i class="fa fa-envelope"></i>
+         {{ form.email }}
+    </div>
+</div>
+<div class="form-group">
+    <div class="input-icon">
+        <i class="fa fa-lock"></i>
+         {{ form.password }}
+    </div>
+</div>
+<div class="form-group">
+    <div class="input-icon">
+        <i class="fa fa-user"></i>
+         {{ form.role }}
+    </div>
+</div>
+<div class="form-group">
+    <div class="input-icon">
+         {{ form.photo }}
+    </div>
+</div>
+
+{#{{ form.as_p }}#}

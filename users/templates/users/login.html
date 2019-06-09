@@ -1,0 +1,32 @@
+{% extends 'base_login.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    {% include 'includes/message_template.html' %}
+
+
+          <form class="login-form" action="" method="post">
+                <h3 class="form-title">Login to your account</h3>
+
+                {% include 'includes/login_form_body.html' %}
+
+                <div class="form-actions">
+                    <button type="submit" class="btn green pull-right"> Login </button>
+                </div>
+
+                <div class="">
+                    <h4>Have no account ?</h4>
+                    <p> No worries, click
+                        <a href="{% url 'users:add_user' %}"> here </a> to create account. </p>
+                </div>
+
+                <div class="social-btn">
+                    <a class="btn red pull-right" href="#">Login with Google</a>
+                </div>
+                <br><br>
+
+            </form>
+
+{% endblock %}

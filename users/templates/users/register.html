@@ -1,0 +1,33 @@
+{% extends 'base_login.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    {% include 'includes/message_template.html' %}
+
+    <!-- BEGIN FORM-->
+    <form class="form-horizontal" method="post" action="" role="form" enctype="multipart/form-data">
+         <h3 class="form-title">Register</h3>
+
+         <div class="form-body">
+              {% include 'includes/register_form_body.html' %}
+         </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn green pull-right"> Register </button>
+        </div>
+        <div class="">
+            <h4>Have an account ?</h4>
+            <p> Click<a href="{% url 'users:login' %}"> here </a> to login to your account. </p>
+        </div>
+
+        <div class="social-btn">
+            <a class="btn red pull-right" href="#">Signup with Google</a>
+        </div>
+        <br><br>
+
+    </form>
+    <!-- END FORM-->
+
+{% endblock %}

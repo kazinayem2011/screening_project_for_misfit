@@ -1,0 +1,369 @@
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Roboto-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Roboto-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Roboto-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url('../fonts/Oswald-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Oswald-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Oswald-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Oswald-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Oswald-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-ExtraLightItalic.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Montserrat-ExtraLightItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Montserrat-ExtraLightItalic.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Montserrat-ExtraLightItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Montserrat-ExtraLightItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+
+
+
+/*body{font-family: 'Oswald', sans-serif;}*/
+.user_list_pic{
+    width:150px !important;
+}
+.list-group-item{border: none; padding: 4px 0px; }
+.list-group-item a:hover{text-decoration: none}
+.related_content_list{padding-left: 20px}
+.related_content_title{text-decoration: underline}
+.content_list_active:hover{pointer-events: none; cursor: default; color: #000}
+.content_list_active{pointer-events: none; cursor: default; color: #000}
+.errorlist li{color: #ff0000; list-style: none; text-align: center; margin-left: -162px;}
+
+#id_template {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#id_template li {
+    float: left;
+}
+
+#id_template li label {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+#id_template li label img{
+    height: 150px;
+    width: 100px;
+}
+#id_template li label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+#id_template li label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+#id_template li label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+.image_thumb{
+    width: 100px;
+}
+#webmenu_child ul li img{
+    width: 30px;
+    height: 14px;
+    padding-right: 8px;
+}
+#webmenu_msdd{
+    min-width: 165px;
+}
+.dd .ddTitle #webmenu_title img {
+    width: 30px;
+    height: 14px;
+    padding-right: 8px;
+    margin-top: -4px;
+}
+.dd .ddTitle #car_dropdown_title img {
+    width: 32px;
+    height: 16px;
+    padding-right: 8px;
+    margin-top: -4px;
+}
+.dd .ddTitle #epub_dropdown_title img {
+    width: 28px;
+    height: 18px;
+    padding-right: 8px;
+    margin-top: -4px;
+}
+#webmenu_title{
+    background-color: #fff;
+}
+
+#sample_editable_1_new.btn{
+    margin-bottom: 5px !important;
+}
+
+#delete_selected.btn{
+    margin-top: 5px !important;
+    display: table;
+}
+
+ /* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+    margin: 0px;
+min-height: 33px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.lang_select{
+    margin-top: 5px !important;
+}
+.more_info{
+    padding: 0;
+    margin: 0;
+    line-height: 13px;
+    color: #1f858e !important;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.more_info:hover{
+    color: #c7254e !important;
+}
+.last_updated_content{
+    text-transform: lowercase !important;
+    font-size: 12px;
+    display: block;
+    margin-top: 12px;
+}
+#loading_loader{
+		position:fixed; top: 40% !important; left: 50% !important; display: none; z-index: 10000;
+	}
+.disable_body {
+    background-color:#364150;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    top: 0px;
+    left: 0px;
+    opacity: .8; /* in FireFox */
+    filter: alpha(opacity=50); /* in IE */
+}
+.custom_error_msg{
+    display: none;
+    color: #ff0000;
+    list-style: none;
+    text-align: center;
+    margin-left: -195px;
+}
+
+.custom_notification .details{
+    width: 100%;
+
+}
+
+.custom_notification .time{
+    width: 100%;
+    text-align: right;
+    color: #36c6d3;
+}
+
+.page-bar .btn{
+    padding: 3px 12px !important;
+}
+.page-content .btn-success{
+    margin-top: -2px;
+}
+.portlet.light {
+    margin-top: 6px;
+}
+.show_error_msg{
+    display: none;
+}
+.page-404 {
+    text-align: center;
+    top: 90px;
+}
+.page-404 .number {
+    position: relative !important;
+    top: 35px !important;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #7bbbd6;
+    text-align: right;
+}
+.page-404 .number{
+    letter-spacing: -10px;
+    line-height: 128px;
+    font-size: 128px !important;
+    font-weight: 300;
+}
+.page-footer {
+    padding: 8px 20px 5px;
+    font-size: 13px;
+    height: 33px;
+    bottom: 0;
+}
+.img-circle{
+    border-radius: 0px !important;
+}
+.page-footer-inner{display: inherit !important; text-align: center !important; float: inherit !important;}
+
+.page-sidebar-wrapper{
+    max-height: 100%;
+    overflow-y: auto;
+    position: fixed;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    /*border-radius: 5px;*/
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.portlet.light {
+    padding: 6px 20px 15px;
+    background-color: #fff;
+}
+#car_epub_button, #lang_button, #car_button{
+    height: 30px;
+    padding: 4px 11px;
+}
+.file_upload{margin-top: 6px !important;}
+
+.profile-image .img-thumbnail{
+    max-width: 150px !important;
+}
+.error{
+    color: #F44336 !important;
+}
+
+.portlet.box > .portlet-body {
+    background-color: #fff;
+    padding: 17px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-bottom: 2px;
+    padding-top: 17px !important;
+    min-height: 100px;
+}
+.page-header.navbar .top-menu .navbar-nav > li.dropdown-notification .dropdown-menu .dropdown-menu-list > li a .time{
+      float: left;
+    font-size: 11px;
+    font-weight: 400;
+    max-width: 100%;
+    opacity: 0.7;
+    padding: 1px 0;
+    text-align: left;
+}
+.page-header.navbar .top-menu .navbar-nav > li.dropdown-notification .dropdown-menu .dropdown-menu-list > li a:hover{
+    border-bottom: 1px solid #3f4f62 !important;
+    padding-bottom: 22px;
+}
+.page-header.navbar .top-menu .navbar-nav > li.dropdown-notification .dropdown-menu .dropdown-menu-list > li a:hover .details{
+    color: #555;
+}
+.page-header.navbar .top-menu .navbar-nav > li.dropdown-notification .dropdown-menu .dropdown-menu-list > li a:hover .time {
+    background: transparent;
+}
+.page-header.navbar .page-logo .logo-default {
+    margin: 18px 0 0;
+    width: 155px;
+    margin-top: 6px;
+}
+.page-header.navbar .top-menu .navbar-nav>li.dropdown-extended .dropdown-menu .dropdown-menu-list>li>a, .page-header.navbar .top-menu .navbar-nav>li.dropdown-extended .dropdown-menu .dropdown-menu-list>li>a:hover {
+    display: block;
+    clear: both;
+    font-weight: 300;
+    line-height: 20px;
+    white-space: normal;
+    font-size: 13px;
+    padding: 5px 11px 30px 15px;
+    text-shadow: none;
+}
+.font-bold{
+    font-weight:bold;
+}
+.error-red p{
+    color: #e73d4a !important;
+}
+.social-btn a{
+    width: 100%;
+}

@@ -1,0 +1,24 @@
+{% csrf_token %}
+{% if form.non_field_errors %}
+    {{ form.non_field_errors }}
+{% endif %}
+
+{% for field in form %}
+    {% if field.errors %}
+        {{ field.errors }}
+    {% endif %}
+
+     <div class="form-group">
+            <ul class="custom_error_msg"><li></li></ul>
+
+            <label class="col-md-3 control-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+            <div class="col-md-6">
+                    {{ field }}
+                <span class="help-block">  </span>
+             </div>
+      </div>
+
+
+{% endfor %}
+
+{#{{ form.as_p }}#}

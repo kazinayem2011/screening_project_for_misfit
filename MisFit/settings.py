@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'users',
     'auditlog',
     'imagekit',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -150,3 +151,32 @@ MEDIA_ROOT = os.path.join(SITE_ROOT, '../assets/')
 MEDIA_ROOT_URL = '/assets/'
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.open_id.OpenIdAuth',
+    'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+LOGIN_URL = 'users:social_login'
+LOGOUT_URL = 'users:logout'
+LOGIN_REDIRECT_URL = 'users:social_login'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='132042305515-mo1dnef877e83i57bbc2lupc1omm2i9s.apps.googleusercontent.com'  #Paste CLient Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'tj8p9sj5z1aCZr4XnbCBsaJt' #Paste Secret Key
+
+SOCIAL_AUTH_PIPELINE = (
+
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.get_username',
+    'social_core.pipeline.user.create_user',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+    'MisFit.pipeline.get_avatar',
+)

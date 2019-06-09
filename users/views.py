@@ -50,6 +50,52 @@ def login(request):
                 return redirect('users:login')
 
 
+def social_login(request):
+    # print(request.user)
+    if 'logged_in' in request.session:
+        if request.session['logged_in'] is True:
+            return redirect('users:list_user')
+    else:
+        try:
+            check_user_exist = User.objects.get(Q(email=request.user.email))
+            if request.method == 'GET':
+                if check_user_exist.password == '':
+                    form = SetPasswordForm
+                    return render(request, 'users/set_password.html', {'form': form, 'browser_title': 'Set Password'})
+                else:
+                    # Set user session . . .
+                    set_user_session(request, check_user_exist)
+                    return redirect('users:list_user')
+
+            elif request.method == 'POST':
+                form = SetPasswordForm(request.POST or None, instance=check_user_exist)
+                if form.is_valid():
+                    form = form.save(commit=False)
+                    password = form.password.encode('utf-8')
+                    password = hashlib.sha256(password).hexdigest()
+                    form.password = password
+                    form.save()
+
+                    # Set user session . . .
+                    set_user_session(request, check_user_exist)
+                    return redirect('users:list_user')
+                else:
+                    return render(request, 'users/set_password.html', {'form': form, 'browser_title': 'Set Password'})
+
+        except User.DoesNotExist:
+            form = LoginForm
+            return render(request, 'users/login.html', {'form': form, 'browser_title': 'User Login'})
+
+
+def set_user_session(request, userData):
+    request.session['logged_in'] = True
+    request.session['email'] = userData.email
+    request.session['id'] = userData.id
+    role = Role.objects.get(id=userData.role_id)
+    request.session['role'] = role.role_title
+    request.session['role_id'] = userData.role_id
+
+
 def add_user(request):
     arg = {}
     arg['browser_title'] = "Register"

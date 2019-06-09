@@ -6,6 +6,7 @@ urlpatterns = [
 
     url(r'^$', login, name='home'),
     url(r'^login/$', login, name='login'),
+    url(r'^social_login/$', social_login, name='social_login'),
     url(r'^logout/$', logout, name='logout'),
     url(r'^add/$', add_user, name='add_user'),
     url(r'^list/', list_user, name='list_user'),

@@ -13,7 +13,7 @@ def get_avatar(request, backend, strategy, details, response, user=None, *args, 
     # if backend.name == 'twitter':
     #     url = response.get('profile_image_url', '').replace('_normal','')
     if backend.name == 'google-oauth2':
-        url = response['image'].get('url')
+        url = response["picture"]
         request.session['photo'] = url
 
         get_file = download(url)

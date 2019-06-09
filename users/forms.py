@@ -36,3 +36,18 @@ class UserAddForm(forms.ModelForm):
         if len(password) < 7:
             raise ValidationError("Password must have 7 characters.")
         return password
+
+
+class SetPasswordForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('password',)
+        widgets = {
+            'password': forms.PasswordInput(attrs={"class": 'form-control', 'required' : 'required','placeholder': 'Password'}),
+        }
+
+    def clean_password(self):
+        password = self.cleaned_data.get('password')
+        if len(password) < 7:
+            raise ValidationError("Password must have 7 characters.")
+        return password

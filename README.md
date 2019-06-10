@@ -59,3 +59,11 @@ Now run the development server by typing the next command, to stop the server ju
 ```
 python3 manage.py runserver
 ```
+
+# Unit Testing
+
+To run the test unit of users module, use the following command.
+```
+python3 manage.py test users
+```
+

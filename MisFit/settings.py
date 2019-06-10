@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'MisFit.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'misfit2',
+        'NAME': 'misfit',
         'USER': 'root',
         'PASSWORD': '123456',
         # 'PASSWORD': '',

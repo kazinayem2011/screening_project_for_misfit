@@ -42,6 +42,9 @@ pip install -r requirements.txt
 
 6. Create a mysql database by naming 'misfit', make sure about password field on database connection in settings.py file and run the command
 ```bash
+python3 manage.py makemigrations
+```
+```bash
 python3 manage.py migrate
 ```
 
@@ -58,6 +61,11 @@ INSERT INTO `users_role` (`id`, `role_title`) VALUES
 Now run the development server by typing the next command, to stop the server just press **Ctrl + C**:
 ```
 python3 manage.py runserver
+```
+
+Browse url with:
+```
+http://localhost:8000
 ```
 
 # Unit Testing

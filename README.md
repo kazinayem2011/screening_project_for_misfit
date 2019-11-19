@@ -16,7 +16,7 @@ Make sure you have installed Python 3 and pip
 
 1. Download or Clone the project
 ```
-git clone https://github.com/kazinayem2011/screening_project_for_misfit.git
+git clone git@github.com:kazinayem2011/django_authentication.git
 ```
 
 2. Install virtualenv.

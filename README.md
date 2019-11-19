@@ -1,4 +1,4 @@
-# screening_project
+# Python Django simple authentication 
 A simple example of role based authentication system.
 What can you find here:
 * Custom User registration and login system with role based functionality

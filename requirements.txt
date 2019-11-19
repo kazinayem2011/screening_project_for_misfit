@@ -5,7 +5,7 @@ django-appconf==1.0.2
 django-auditlog==0.4.5
 django-imagekit==4.0.2
 django-jsonfield==1.0.1
-djangorestframework==3.7.7
+djangorestframework==3.9.1
 idna==2.6
 pilkit==2.0
 Pillow==5.0.0
